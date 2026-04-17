@@ -21,8 +21,8 @@ services:
   # ──────────────────────────────────────
   agent:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ../..           # project root — Dockerfile dùng paths như utils/mock_llm.py
+      dockerfile: 02-docker/production/Dockerfile
       target: runtime          # chỉ build stage "runtime", không build "builder"
     environment:
       - ENVIRONMENT=staging
@@ -32,7 +32,8 @@ services:
       # ❌ KHÔNG đặt secrets trực tiếp ở đây trong production
       # ✅ Dùng: docker secret hoặc env file ngoài git
     env_file:
-      - .env.local              # secrets riêng, trong .gitignore
+      - path: .env.local        # secrets riêng, trong .gitignore
+        required: false         # không bắt buộc — dùng .env.local.example để tạo
     depends_on:
       redis:
         condition: service_healthy
