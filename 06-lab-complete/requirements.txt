@@ -5,3 +5,8 @@ pyjwt==2.9.0
 python-dotenv==1.0.1
 redis==5.1.0
 psutil==6.0.0
+
+# LangChain + Gemini
+langchain-google-genai>=2.0.0
+langchain-core>=0.3.0
+langgraph>=0.2.0

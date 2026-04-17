@@ -4,9 +4,9 @@ Cost Guard — Daily Budget Protection
 Bảo vệ khỏi bill bất ngờ từ LLM API.
 Tính cost dựa trên token usage, block khi vượt DAILY_BUDGET_USD.
 
-Pricing (GPT-4o-mini):
-  Input:  $0.15 / 1M tokens
-  Output: $0.60 / 1M tokens
+Pricing (Gemini 2.5 Flash Lite):
+  Input:  $0.075 / 1M tokens
+  Output: $0.30  / 1M tokens
 """
 import time
 from fastapi import HTTPException
@@ -16,8 +16,8 @@ from app.config import settings
 _daily_cost: float = 0.0
 _cost_reset_day: str = time.strftime("%Y-%m-%d")
 
-PRICE_INPUT_PER_1K = 0.00015   # $0.15 / 1M tokens
-PRICE_OUTPUT_PER_1K = 0.0006   # $0.60 / 1M tokens
+PRICE_INPUT_PER_1K = 0.000075   # $0.075 / 1M tokens  (Gemini 2.5 Flash Lite)
+PRICE_OUTPUT_PER_1K = 0.0003    # $0.30  / 1M tokens  (Gemini 2.5 Flash Lite)
 
 
 def check_and_record_cost(input_tokens: int, output_tokens: int) -> None:
