@@ -141,31 +141,6 @@ curl -X POST https://your-agent.railway.app/ask \
 - [Test results](screenshots/test.png)
 ```
 
----
-
-## 📤 Repository Structure
-
-```
-day12-[your-name]/
-├── MISSION_ANSWERS.md         # All exercise answers
-├── DEPLOYMENT.md              # Service URL and info
-├── README.md                  # Setup instructions
-├── app/                       # Source code
-├── utils/                     # Utilities
-├── Dockerfile                 # Docker config
-├── docker-compose.yml         # Stack config
-├── requirements.txt           # Dependencies
-├── .env.example               # Environment template
-├── .dockerignore              # Docker ignore
-├── railway.toml               # Deployment config
-└── screenshots/               # Deployment screenshots
-    ├── dashboard.png
-    ├── running.png
-    └── test.png
-```
-
----
-
 ## ✅ Pre-Submission Checklist
 
 - [ ] Repository is public (or instructor has access)
